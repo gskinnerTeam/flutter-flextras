@@ -2,13 +2,48 @@
 
 A collection of Flex widgets (Columns and Rows) with additional functionality.
 
-## Getting Started
+# PaddedContainer and PaddedRow
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+A simple combination of Padding and Column/Row, as is often needed. Very simple, but saves a few lines in your tree:
+```
+return PaddedColumn(
+    padding: EdgeInsets.all(20),
+    children: [ ... ]
+)
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+# SeparatedColumn and SeparatedRow
+
+Often you want to place a divider between the elements of a Column or Row. Use the `separatorBuilder` method to do so easily:
+```
+return SeparatedColumn(
+    // 10px gap between each element
+    separatorBuilder: () => SizedBox(height: 10),
+    children: [ ... ]
+)
+```
+
+# ExpandedScrollingColumn and ExpandedScrollingRow
+
+Solves a common use case where you want to have some expanding content, that can also begin scrolling if it runs out of room.
+
+Normally, if you do something like this it will throw a layout error:
+```
+SingleChildScrollView(
+    child: Column(
+        children: [
+            Expanded(child: ...) // This tries to expand to infinity :(
+        ]
+    )
+)
+```
+
+`ExpandedScrollingColumn` fixes this by using the content's natural height, **or** the height of the parent view, whichever is greater.
+```
+// This will expand vertically to fill the parent, but begin scrolling when it has to
+ExpandedScrollingColumn(
+    children: [
+        Expanded(child: Container(height: 400)),
+    ]
+)
+```
