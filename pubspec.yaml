@@ -1,7 +1,8 @@
 name: flextras
 description: A collection of Flex widgets (Columns and Rows) with additional functionality.
-version: 0.0.1+1
-homepage:
+version: 0.0.1+2
+homepage: https://github.com/gskinnerTeam/flutter-flextras
+repository: https://github.com/gskinnerTeam/flutter-flextras
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

@@ -1,8 +1,20 @@
 # flextras
+A collection of Columns and Rows with extra functionality.
 
-A collection of Flex widgets (Columns and Rows) with additional functionality.
+## 🔨 Installation
+```yaml
+dependencies:
+  flextras: ^0.0.1
+```
 
-# PaddedContainer and PaddedRow
+### ⚙ Import
+
+```dart
+import 'package:flextras/flextras.dart';
+```
+
+## 🕹️ Usage
+### PaddedContainer and PaddedRow
 
 A simple combination of Padding and Column/Row, as is often needed. Very simple, but saves a few lines in your tree:
 ```
@@ -12,7 +24,7 @@ return PaddedColumn(
 )
 ```
 
-# SeparatedColumn and SeparatedRow
+### SeparatedColumn and SeparatedRow
 
 Often you want to place a divider between the elements of a Column or Row. Use the `separatorBuilder` method to do so easily:
 ```
@@ -23,7 +35,7 @@ return SeparatedColumn(
 )
 ```
 
-# ExpandedScrollingColumn and ExpandedScrollingRow
+### ExpandedScrollingColumn and ExpandedScrollingRow
 
 Solves a common use case where you want to have some expanding content, that can also begin scrolling if it runs out of room.
 
@@ -47,3 +59,11 @@ ExpandedScrollingColumn(
     ]
 )
 ```
+
+## 🐞 Bugs/Requests
+
+If you encounter any problems please open an issue. If you feel the library is missing a feature, please raise a ticket on Github and we'll look into it. Pull request are welcome.
+
+## 📃 License
+
+MIT License
