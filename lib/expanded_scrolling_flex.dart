@@ -15,6 +15,8 @@ class ExpandedScrollingFlex extends StatelessWidget {
     this.textBaseline,
     this.scrollViewBuilder,
   }) : super(key: key);
+
+  ///
   final List<Widget> children;
   final Axis direction;
   final CrossAxisAlignment crossAxisAlignment;

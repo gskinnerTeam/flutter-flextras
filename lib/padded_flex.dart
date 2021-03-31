@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Combines padding and a Row into one
+/// Combines padding and a Row into one
 class PaddedRow extends StatelessWidget {
   const PaddedRow({
     Key? key,
@@ -39,7 +39,7 @@ class PaddedRow extends StatelessWidget {
   }
 }
 
-// Combines padding and a Column into one
+/// Combines padding and a Column into one
 class PaddedColumn extends StatelessWidget {
   const PaddedColumn({
     Key? key,

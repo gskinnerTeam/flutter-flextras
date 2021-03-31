@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Allows you to inject a widget between each item in the row
+/// Allows you to inject a widget between each item in the row
 class SeparatedRow extends StatelessWidget {
   const SeparatedRow({
     Key? key,
@@ -16,7 +16,6 @@ class SeparatedRow extends StatelessWidget {
   }) : super(key: key);
 
   final List<Widget> children;
-  final Widget Function() separatorBuilder;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
   final MainAxisSize mainAxisSize;
@@ -24,6 +23,9 @@ class SeparatedRow extends StatelessWidget {
   final TextDirection textDirection;
   final VerticalDirection verticalDirection;
   final EdgeInsets padding;
+
+  /// Return a widget, to be used in between each child widget
+  final Widget Function() separatorBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class SeparatedRow extends StatelessWidget {
   }
 }
 
-// Allows you to inject a widget between each item in the column
+/// Allows you to inject a widget between each item in the column
 class SeparatedColumn extends StatelessWidget {
   final List<Widget> children;
   final Widget Function() separatorBuilder;

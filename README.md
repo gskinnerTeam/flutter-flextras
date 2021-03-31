@@ -17,7 +17,7 @@ import 'package:flextras/flextras.dart';
 ### PaddedContainer and PaddedRow
 
 A simple combination of Padding and Column/Row, as is often needed. Very simple, but saves a few lines in your tree:
-```
+```dart
 return PaddedColumn(
     padding: EdgeInsets.all(20),
     children: [ ... ]
@@ -27,7 +27,7 @@ return PaddedColumn(
 ### SeparatedColumn and SeparatedRow
 
 Often you want to place a divider between the elements of a Column or Row. Use the `separatorBuilder` method to do so easily:
-```
+```dart
 return SeparatedColumn(
     // 10px gap between each element
     separatorBuilder: () => SizedBox(height: 10),
@@ -40,7 +40,7 @@ return SeparatedColumn(
 Solves a common use case where you want to have some expanding content, that can also begin scrolling if it runs out of room.
 
 Normally, if you do something like this it will throw a layout error:
-```
+```dart
 SingleChildScrollView(
     child: Column(
         children: [
@@ -51,7 +51,7 @@ SingleChildScrollView(
 ```
 
 `ExpandedScrollingColumn` fixes this by using the content's natural height, **or** the height of the parent view, whichever is greater.
-```
+```dart
 // This will expand vertically to fill the parent, but begin scrolling when it has to
 ExpandedScrollingColumn(
     children: [
