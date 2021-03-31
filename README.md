@@ -1,5 +1,9 @@
 # flextras
-A collection of Columns and Rows with extra functionality.
+A collection of Columns and Rows with extra functionality:
+
+* `PaddedColumn` / `PaddedRow` - Wraps a column/row in padding
+* `SeparatedColumn` / `SeparatedRow` - Insert any widget between each child
+* `ExpandedScrollingColumn` / `ExpandedScrollingRow` - Allow a column to hold Expandable children, while still scrolling if it needs to.
 
 ## 🔨 Installation
 ```yaml
