@@ -29,7 +29,7 @@ class SeparatedRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> c = children.toList();
+    List<Widget> c = [...children];
     for (var i = c.length; i-- > 0;) {
       if (i > 0) c.insert(i, separatorBuilder());
     }
@@ -73,7 +73,7 @@ class SeparatedColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> c = children.toList();
+    List<Widget> c = [...children];
     for (var i = c.length; i-- > 0;) {
       if (i > 0) c.insert(i, separatorBuilder());
     }

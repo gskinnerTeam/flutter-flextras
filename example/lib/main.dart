@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
                       ),
                       Text("BOTTOM CONTENT", style: TextStyle(fontSize: 20)),
                     ],
-                  ),
+          ),
                 )),
               ]),
-            ),
+        ),
             SeparatedRow(children: [
               Expanded(child: Container(width: 200, height: 20, color: Colors.green)),
               Expanded(child: Container(width: 200, height: 20, color: Colors.green)),
