@@ -25,7 +25,7 @@ class ExpandedScrollingFlex extends StatelessWidget {
   final MainAxisSize mainAxisSize;
   final VerticalDirection verticalDirection;
   final TextBaseline? textBaseline;
-  final SingleChildScrollView Function(Axis direction, Widget child)? scrollViewBuilder;
+  final Widget Function(Axis direction, Widget child)? scrollViewBuilder;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, constraints) {
@@ -76,7 +76,7 @@ class ExpandedScrollingRow extends StatelessWidget {
   final MainAxisSize mainAxisSize;
   final VerticalDirection verticalDirection;
   final TextBaseline? textBaseline;
-  final SingleChildScrollView Function(Axis direction, Widget child)? scrollViewBuilder;
+  final Widget Function(Axis direction, Widget child)? scrollViewBuilder;
   @override
   Widget build(BuildContext context) {
     return ExpandedScrollingFlex(
@@ -113,7 +113,7 @@ class ExpandedScrollingColumn extends StatelessWidget {
   final MainAxisSize mainAxisSize;
   final VerticalDirection verticalDirection;
   final TextBaseline? textBaseline;
-  final SingleChildScrollView Function(Axis direction, Widget child)? scrollViewBuilder;
+  final Widget Function(Axis direction, Widget child)? scrollViewBuilder;
   @override
   Widget build(BuildContext context) {
     return ExpandedScrollingFlex(
