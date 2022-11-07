@@ -1,3 +1,5 @@
+[![tests](https://github.com/gskinnerTeam/flutter-flextras/actions/workflows/tests.yml/badge.svg)](https://github.com/gskinnerTeam/flutter-flextras/actions/workflows/tests.yml)
+
 # flextras
 A collection of Columns and Rows with extra functionality:
 
