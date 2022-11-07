@@ -1,5 +1,6 @@
 ## 1.0.0
-* Added SeparatedFlexible
+* Added SeparatedFlex
+* Add tests
 
 ## 0.0.2
 * Changed scrollViewBuilder to allow any Widget

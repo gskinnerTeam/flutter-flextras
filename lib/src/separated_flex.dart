@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SeparatedFlexible extends StatelessWidget {
-  const SeparatedFlexible({
+class SeparatedFlex extends StatelessWidget {
+  const SeparatedFlex({
     Key? key,
     required this.children,
     required this.direction,
@@ -30,7 +30,7 @@ class SeparatedFlexible extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> c = children.toList();
+    List<Widget> c = List.of(children);
     for (var i = c.length; i-- > 0;) {
       if (i > 0) c.insert(i, separatorBuilder());
     }
@@ -76,7 +76,7 @@ class SeparatedRow extends StatelessWidget {
   final Widget Function() separatorBuilder;
 
   @override
-  Widget build(BuildContext context) => SeparatedFlexible(
+  Widget build(BuildContext context) => SeparatedFlex(
         separatorBuilder: separatorBuilder,
         children: children,
         direction: Axis.horizontal,
@@ -116,7 +116,7 @@ class SeparatedColumn extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SeparatedFlexible(
+  Widget build(BuildContext context) => SeparatedFlex(
         separatorBuilder: separatorBuilder,
         children: children,
         direction: Axis.vertical,
