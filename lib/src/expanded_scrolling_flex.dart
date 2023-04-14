@@ -14,6 +14,7 @@ class ExpandedScrollingFlex extends StatelessWidget {
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
     this.scrollViewBuilder,
+    this.physics,
   }) : super(key: key);
 
   ///
@@ -26,6 +27,8 @@ class ExpandedScrollingFlex extends StatelessWidget {
   final VerticalDirection verticalDirection;
   final TextBaseline? textBaseline;
   final Widget Function(Axis direction, Widget child)? scrollViewBuilder;
+  final ScrollPhysics? physics;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, constraints) {
@@ -44,30 +47,36 @@ class ExpandedScrollingFlex extends StatelessWidget {
       content = IntrinsicHeight(child: IntrinsicWidth(child: content));
       // Constrained box stops the column/row from getting too small, forcing it to be at least as big as it's parent
       content = ConstrainedBox(
-        constraints: BoxConstraints(minWidth: constraints.maxWidth, minHeight: constraints.maxHeight),
+        constraints: BoxConstraints(
+            minWidth: constraints.maxWidth, minHeight: constraints.maxHeight),
         child: content,
       );
 
       // Use an external scrollBuilder if one is available
       return scrollViewBuilder != null
           ? scrollViewBuilder!.call(direction, content)
-          : SingleChildScrollView(scrollDirection: direction, child: content);
+          : SingleChildScrollView(
+              scrollDirection: direction,
+              physics: physics,
+              child: content,
+            );
     });
   }
 }
 
 class ExpandedScrollingRow extends StatelessWidget {
-  const ExpandedScrollingRow(
-      {Key? key,
-      required this.children,
-      this.crossAxisAlignment = CrossAxisAlignment.center,
-      this.textDirection,
-      this.mainAxisAlignment = MainAxisAlignment.start,
-      this.mainAxisSize = MainAxisSize.max,
-      this.verticalDirection = VerticalDirection.down,
-      this.textBaseline,
-      this.scrollViewBuilder})
-      : super(key: key);
+  const ExpandedScrollingRow({
+    Key? key,
+    required this.children,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.textDirection,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
+    this.verticalDirection = VerticalDirection.down,
+    this.textBaseline,
+    this.scrollViewBuilder,
+    this.physics,
+  }) : super(key: key);
 
   final List<Widget> children;
   final CrossAxisAlignment crossAxisAlignment;
@@ -77,6 +86,8 @@ class ExpandedScrollingRow extends StatelessWidget {
   final VerticalDirection verticalDirection;
   final TextBaseline? textBaseline;
   final Widget Function(Axis direction, Widget child)? scrollViewBuilder;
+  final ScrollPhysics? physics;
+
   @override
   Widget build(BuildContext context) {
     return ExpandedScrollingFlex(
@@ -89,22 +100,24 @@ class ExpandedScrollingRow extends StatelessWidget {
       verticalDirection: verticalDirection,
       textBaseline: textBaseline,
       scrollViewBuilder: scrollViewBuilder,
+      physics: physics,
     );
   }
 }
 
 class ExpandedScrollingColumn extends StatelessWidget {
-  const ExpandedScrollingColumn(
-      {Key? key,
-      required this.children,
-      this.crossAxisAlignment = CrossAxisAlignment.center,
-      this.textDirection,
-      this.mainAxisAlignment = MainAxisAlignment.start,
-      this.mainAxisSize = MainAxisSize.max,
-      this.verticalDirection = VerticalDirection.down,
-      this.textBaseline,
-      this.scrollViewBuilder})
-      : super(key: key);
+  const ExpandedScrollingColumn({
+    Key? key,
+    required this.children,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.textDirection,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
+    this.verticalDirection = VerticalDirection.down,
+    this.textBaseline,
+    this.scrollViewBuilder,
+    this.physics,
+  }) : super(key: key);
 
   final List<Widget> children;
   final CrossAxisAlignment crossAxisAlignment;
@@ -114,6 +127,8 @@ class ExpandedScrollingColumn extends StatelessWidget {
   final VerticalDirection verticalDirection;
   final TextBaseline? textBaseline;
   final Widget Function(Axis direction, Widget child)? scrollViewBuilder;
+  final ScrollPhysics? physics;
+
   @override
   Widget build(BuildContext context) {
     return ExpandedScrollingFlex(
@@ -126,6 +141,7 @@ class ExpandedScrollingColumn extends StatelessWidget {
       verticalDirection: verticalDirection,
       textBaseline: textBaseline,
       scrollViewBuilder: scrollViewBuilder,
+      physics: physics,
     );
   }
 }
